@@ -1,0 +1,26 @@
+<!--
+  Manipulator specific version of abb_driver's 'robot_interface.launch'.
+
+  Defaults provided for IRB 120:
+   - J23_coupled = false
+
+  Usage:
+    robot_interface_download_irb120.launch robot_ip:=<value>
+-->
+<launch>
+<node name="recognizer" pkg="pocketsphinx" type="recognizer.py">
+      <param name="lm" value="$(find pocketsphinx)/demo/voice_cmd_ABB.lm"/>
+      <param name="dict" value="$(find pocketsphinx)/demo/voice_cmd.dic"/>
+    </node>
+
+    <node name="single_publisher" type="single_publisher.py" pkg="threespace" output="screen"/>
+  <arg name="robot_ip" />
+  <arg name="J23_coupled" default="false" />
+
+  <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120.yaml" />
+
+  <include file="$(find abb_driver)/launch/robot_interface.launch">
+    <arg name="robot_ip"    value="$(arg robot_ip)" />
+    <arg name="J23_coupled" value="$(arg J23_coupled)" />
+  </include>
+</launch>
