@@ -1,0 +1,101 @@
+Language model created by QuickLM on Sun Nov 19 13:53:13 EST 2017
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 15 sentences and 22 words
+
+\data\
+ngram 1=22
+ngram 2=35
+ngram 3=21
+
+\1-grams:
+-0.8325 </s> -0.3010
+-0.8325 <s> -0.2319
+-2.0086 CONFIGURATION -0.2319
+-2.0086 EIGHT -0.2319
+-2.0086 EXECUTE -0.2968
+-2.0086 FIVE -0.2319
+-2.0086 FOUR -0.2319
+-2.0086 GO -0.2968
+-2.0086 HERE -0.2319
+-2.0086 HOME -0.2968
+-2.0086 LAST -0.2319
+-2.0086 NINE -0.2319
+-2.0086 ONE -0.2319
+-2.0086 SEND -0.2968
+-2.0086 SEVEN -0.2319
+-2.0086 SIX -0.2319
+-2.0086 START -0.2924
+-2.0086 STOP -0.2924
+-1.7076 TELEOPERATION -0.2319
+-2.0086 THREE -0.2319
+-2.0086 TRAJECTORY -0.2319
+-2.0086 TWO -0.2319
+
+\2-grams:
+-1.4771 <s> EIGHT 0.0000
+-1.4771 <s> EXECUTE 0.0000
+-1.4771 <s> FIVE 0.0000
+-1.4771 <s> FOUR 0.0000
+-1.4771 <s> GO 0.0000
+-1.4771 <s> HOME 0.0000
+-1.4771 <s> NINE 0.0000
+-1.4771 <s> ONE 0.0000
+-1.4771 <s> SEND 0.0000
+-1.4771 <s> SEVEN 0.0000
+-1.4771 <s> SIX 0.0000
+-1.4771 <s> START 0.0000
+-1.4771 <s> STOP 0.0000
+-1.4771 <s> THREE 0.0000
+-1.4771 <s> TWO 0.0000
+-0.3010 CONFIGURATION </s> -0.3010
+-0.3010 EIGHT </s> -0.3010
+-0.3010 EXECUTE TRAJECTORY 0.0000
+-0.3010 FIVE </s> -0.3010
+-0.3010 FOUR </s> -0.3010
+-0.3010 GO HERE 0.0000
+-0.3010 HERE </s> -0.3010
+-0.3010 HOME CONFIGURATION 0.0000
+-0.3010 LAST </s> -0.3010
+-0.3010 NINE </s> -0.3010
+-0.3010 ONE </s> -0.3010
+-0.3010 SEND LAST 0.0000
+-0.3010 SEVEN </s> -0.3010
+-0.3010 SIX </s> -0.3010
+-0.3010 START TELEOPERATION 0.0000
+-0.3010 STOP TELEOPERATION 0.0000
+-0.3010 TELEOPERATION </s> -0.3010
+-0.3010 THREE </s> -0.3010
+-0.3010 TRAJECTORY </s> -0.3010
+-0.3010 TWO </s> -0.3010
+
+\3-grams:
+-0.3010 <s> EIGHT </s>
+-0.3010 <s> EXECUTE TRAJECTORY
+-0.3010 <s> FIVE </s>
+-0.3010 <s> FOUR </s>
+-0.3010 <s> GO HERE
+-0.3010 <s> HOME CONFIGURATION
+-0.3010 <s> NINE </s>
+-0.3010 <s> ONE </s>
+-0.3010 <s> SEND LAST
+-0.3010 <s> SEVEN </s>
+-0.3010 <s> SIX </s>
+-0.3010 <s> START TELEOPERATION
+-0.3010 <s> STOP TELEOPERATION
+-0.3010 <s> THREE </s>
+-0.3010 <s> TWO </s>
+-0.3010 EXECUTE TRAJECTORY </s>
+-0.3010 GO HERE </s>
+-0.3010 HOME CONFIGURATION </s>
+-0.3010 SEND LAST </s>
+-0.3010 START TELEOPERATION </s>
+-0.3010 STOP TELEOPERATION </s>
+
+\end\
