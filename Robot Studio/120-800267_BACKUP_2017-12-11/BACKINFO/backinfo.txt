@@ -1,0 +1,72 @@
+#
+# Generated backup file, do not edit.
+#
+# Originally at: /hd0a/TEMP/backup.819361
+# 2017-12-11  15:57:29
+#
+>>SYSTEM_ID:
+120-800267
+
+>>PRODUCTS_ID:
+RobotWare Version: 6.04.01.00
+
+  RobotWare Base
+  709-1 DeviceNet Master/Slave
+  841-1 EtherNet/IP Scanner/Adapter
+  687-1 Advanced Robot Motion
+  608-1 World Zones
+  610-1 Independent Axis
+  611-1 Path Recovery
+  612-1 Path Offset
+  885-1 SoftMove
+  613-1 Collision Detection
+  614-1 FTP and NFS client
+  616-1 PC Interface
+  617-1 FlexPendant Interface
+  623-1 Multitasking
+  628-1 Sensor Interface
+  689-1 Externally Guided Motion (EGM)
+  1341-1/1520-1 Integrated Vision Interface
+  Motor Commutation
+  Service Info System
+  Pendelum Calibration
+  Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID IRC5 Compact
+  Axis Calibration
+  IRB 120-3/0.6
+
+>>HOME:
+All public files and directories
+
+>>SYSPAR:
+SYS.cfg
+PROC.cfg
+MMC.cfg
+EIO.cfg
+SIO.cfg
+MOC.cfg
+
+
+>>TASK1: (T_ROB1,,)
+PROGMOD/ROS_motion.mod @ 
+SYSMOD/ROS_common.sys @ 
+SYSMOD/user.sys @ 
+SYSMOD/LINKEDM.sys @ HIDDEN
+SYSMOD/ROS_messages.sys @ 
+SYSMOD/ROS_socket.sys @ 
+
+>>TASK2: (ROS_StateServer,,)
+PROGMOD/ROS_stateServer.mod @ 
+SYSMOD/ROS_common.sys @ 
+SYSMOD/user.sys @ 
+SYSMOD/ROS_messages.sys @ 
+SYSMOD/ROS_socket.sys @ 
+
+>>TASK3: (ROS_MotionServer,,)
+PROGMOD/ROS_motionServer.mod @ 
+SYSMOD/ROS_common.sys @ 
+SYSMOD/user.sys @ 
+SYSMOD/ROS_messages.sys @ 
+SYSMOD/ROS_socket.sys @ 
+
+
+>>EOF:

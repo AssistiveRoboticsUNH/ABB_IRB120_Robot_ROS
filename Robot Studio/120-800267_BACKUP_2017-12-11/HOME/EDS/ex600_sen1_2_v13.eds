@@ -1,0 +1,225 @@
+$ EZ-EDS Version 3.9 Generated Electronic Data Sheet
+
+[File]
+        DescText = "EX600-SEN1/2 EDS";
+        CreateDate = 04-02-2009;
+        CreateTime = 09:00:00;
+        ModDate = 02-24-2016;
+        ModTime = 09:00:00;
+        Revision = 1.3;
+        HomeURL = "http://www.smcworld.com";
+
+
+[Device]
+        VendCode = 7;
+        VendName = "SMC Corporation";
+        ProdType = 12;
+        ProdTypeStr = "Communications Adapter";
+        ProdCode = 126;
+        MajRev = 1;
+        MinRev = 10;
+        ProdName = "EX600-SEN#";
+        Catalog = "EX600-SEN#";
+        Icon = "ex600_1.ico";
+
+
+[Device Classification]
+        Class1 = EtherNetIP;
+
+
+[Params]
+        Param1 =
+                0,                      $ first field shall equal 0
+                ,,                      $ path size,path
+                0x0000,                 $ descriptor
+                0xC7,                   $ data type : 16-bit Unsigned Integer
+                2,                      $ data size in bytes
+                "Output Size",          $ name
+                "",                     $ units
+                "",                     $ help string
+                0,64,4,                 $ min, max, default data values
+                ,,,,                    $ mult, dev, base, offset scaling not used
+                ,,,,                    $ mult, dev, base, offset link not used
+                ;                       $ decimal places
+
+        Param2 =
+                0,                      $ first field shall equal 0
+                ,,                      $ path size,path
+                0x0000,                 $ descriptor
+                0xC7,                   $ data type : 16-bit Unsigned Integer
+                2,                      $ data size in bytes
+                "Input Size",           $ name
+                "",                     $ units
+                "",                     $ help string
+                0,64,4,                 $ min, max, default data values
+                ,,,,                    $ mult, dev, base, offset scaling not used
+                ,,,,                    $ mult, dev, base, offset link not used
+                ;                       $ decimal places
+
+        Param3 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "RPI Range",            $ name
+                "",                     $ units
+                "",                     $ help string
+                2000,3200000,10000,     $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param4 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0200,                 $ Descriptor
+                0xC6,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "IO Data",              $ name
+                "",                     $ units
+                "",                     $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+
+
+[Assembly]
+        Revision = 2;
+
+        Assem100 =
+                "Input Data",
+                "20 04 24 64 30 03",
+                ,
+                0x0000,
+                ,,
+                512,Param4;
+        Assem105 =
+                "Configuration Data",
+                "20 04 24 69 30 03",
+                0,
+                0x0000,
+                ,,
+                0,;
+
+        Assem150 =
+                "Output Data",
+                "20 04 24 96 30 03",
+                ,
+                0x0000,
+                ,,
+                512,Param4;
+
+
+[Connection Manager]
+        Connection1 =
+                0x04010002,             $ trigger & transport
+                                        $  0-15  = supported transport classes (class 1)
+                                        $  16 = cyclic (1 = supported)
+                                        $  17 = change of state (0 = not supported)
+                                        $  18 = on demand (0 = not supported)
+                                        $  19-23 = reserved (must be zero)
+                                        $  24-27 = exclusive owner
+                                        $  28-30 = reserved (must be zero)
+                                        $  31 = client 0 / server = 1
+                0x44640405,             $ point/multicast & priority & realtime format
+                                        $   0     = O=>T fixed (1 = supported)
+                                        $   1     = O=>T variable (0 = not supported)
+                                        $   2     = T=>O fixed (1 = supported)
+                                        $   3     = T=>O variable (0 = not supported)
+                                        $  4-7   = reserved (must be zero)
+                                        $  8-10  = O=>T header (4 byte run/idle)
+                                        $  11  = reserved (must be zero)
+                                        $  12-14 = T=>O header
+                                        $  15  = reserved (must be zero)
+                                        $  16-19 = O=>T point-to-point
+                                        $  20-23 = T=>O connection type (multicast or point-to-point)
+                                        $  24-27 = O=>T scheduled
+                                        $  28-31 = T=>O scheduled
+                Param3,Param1,Assem150, $ O=>T RPI,Size,Format
+                Param3,Param2,Assem100, $ T=>O RPI,Size,Format
+                ,,                      $ config part 1 (dynamic assemblies)
+                ,Assem105,              $ config part 2 (module configuration)
+                "Exclusive Owner",      $ connection name
+                "",                     $ Help string
+                "20 04 24 69 2C 96 2C 64";    $ exclusive output path
+
+
+        Connection2 =
+                0x02010002,             $ trigger & transport
+                                        $  0-15  = supported transport classes (class 1)
+                                        $  16 = cyclic (1 = supported)
+                                        $  17 = change of state (0 = not supported)
+                                        $  18 = on demand (0 = not supported)
+                                        $  19-23 = reserved (must be zero)
+                                        $  24-27 = exclusive owner
+                                        $  28-30 = reserved (must be zero)
+                                        $  31 = client 0 / server = 1
+                0x44640305,             $ point/multicast & priority & realtime format
+                                        $   0     = O=>T fixed (1 = supported)
+                                        $   1     = O=>T variable (0 = not supported)
+                                        $   2     = T=>O fixed (1 = supported)
+                                        $   3     = T=>O variable (0 = not supported)
+                                        $  4-7   = reserved (must be zero)
+                                        $  8-10  = O=>T header (4 byte run/idle)
+                                        $  11  = reserved (must be zero)
+                                        $  12-14 = T=>O header
+                                        $  15  = reserved (must be zero)
+                                        $  16-19 = O=>T point-to-point
+                                        $  20-23 = T=>O connection type (multicast or point-to-point)
+                                        $  24-27 = O=>T scheduled
+                                        $  28-31 = T=>O scheduled
+                Param3,0,,              $ O=>T RPI,Size,Format
+                Param3,Param2,Assem100, $ T=>O RPI,Size,Format
+                ,,                      $ config part 1 (dynamic assemblies)
+                ,,                      $ config part 2 (module configuration)
+                "Input Only",           $ connection name
+                "",                     $ Help string
+                "20 04 24 69 2C 67 2C 64";    $ input only path
+
+
+        Connection3 =
+                0x01010002,             $ trigger & transport
+                                        $  0-15  = supported transport classes (class 1)
+                                        $  16 = cyclic (1 = supported)
+                                        $  17 = change of state (0 = not supported)
+                                        $  18 = on demand (0 = not supported)
+                                        $  19-23 = reserved (must be zero)
+                                        $  24-27 = exclusive owner
+                                        $  28-30 = reserved (must be zero)
+                                        $  31 = client 0 / server = 1
+                0x44240305,             $ point/multicast & priority & realtime format
+                                        $   0     = O=>T fixed (1 = supported)
+                                        $   1     = O=>T variable (0 = not supported)
+                                        $   2     = T=>O fixed (1 = supported)
+                                        $   3     = T=>O variable (0 = not supported)
+                                        $  4-7   = reserved (must be zero)
+                                        $  8-10  = O=>T header (4 byte run/idle)
+                                        $  11  = reserved (must be zero)
+                                        $  12-14 = T=>O header
+                                        $  15  = reserved (must be zero)
+                                        $  16-19 = O=>T point-to-point
+                                        $  20-23 = T=>O connection type (multicast)
+                                        $  24-27 = O=>T scheduled
+                                        $  28-31 = T=>O scheduled
+                Param3,0,,              $ O=>T RPI,Size,Format
+                Param3,Param2,Assem100, $ T=>O RPI,Size,Format
+                ,,                      $ config part 1 (dynamic assemblies)
+                ,,                      $ config part 2 (module configuration)
+                "Listen Only",          $ connection name
+                "",                     $ Help string
+                "20 04 24 69 2C 68 2C 64";    $ listen only path
+
+[Port]
+        Port1 =
+                TCP,                    $ port type name
+                "TCP/IP",               $ name of port
+                "20 F5 24 01",          $ instance one of the TCP/IP interface object
+                2;                      $ port number
+
+[Capacity]
+        MaxCIPConnections = 20;         $ Max CIP cnx - all classes
+        TSpec1 = TxRx, 1, 1000;         $ Packets per sec @ 1 bytes
+        TSpec2 = TxRx, 256, 1000;       $ Packets per sec @ 256 bytes
+
