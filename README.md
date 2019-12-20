@@ -29,5 +29,5 @@ To interface with the MATLAB program, you need to run the following launch file:
 
 ## Step 4: Run the app1.mlapp file in MATLAB
 
-The MATLAB files are currently not located on this repository. If you need them, you can request them by email. You may need to change the ip address in the ABB_Robot.m file and the Teleoperator.m file to match that of the computer running ROS.
+You may need to change the ip address in the ABB_Robot.m file and the Teleoperator.m file to match that of the computer running ROS.
 
