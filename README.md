@@ -1,6 +1,6 @@
 # ABB_IRB120_Robot_ROS
 
-## Step 1: Downlaod Robot Studio
+## Step 1: Download Robot Studio
 http://cdn.robotstudio.com/install/RobotStudio_6.06_SP1.zip
 
 ## Step 2: Set up robot controller for ROS
